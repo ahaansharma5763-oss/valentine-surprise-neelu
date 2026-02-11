@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Valentine</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music-control" id="music-toggle">
+        🎵
+    </div>
+
+    <div class="main-container">
+        
+        <!-- STAGE 1: SLIDING PUZZLE -->
+        <section id="stage-1" class="stage active">
+            <h1 class="title">Let's unlock a memory...</h1>
+            <p class="subtitle">Complete the puzzle to continue 💗</p>
+            
+            <div class="puzzle-container" id="puzzle-board">
+                <!-- Tiles injected by JS -->
+            </div>
+            
+            <p id="puzzle-instruction">Tap to move tiles</p>
+        </section>
+
+        <!-- STAGE 2: MARIO RUNNER -->
+        <section id="stage-2" class="stage hidden">
+            <h1 class="title">Jump to my heart!</h1>
+            <p class="subtitle">Collect 18 points for 18 months 💕</p>
+            
+            <canvas id="game-canvas"></canvas>
+            
+            <div class="score-board">Score: <span id="score">0</span>/18</div>
+            <p class="game-instruction">Tap or Space to Jump</p>
+            
+            <div id="game-over-modal" class="hidden">
+                <h2>Ouch! Try again 💕</h2>
+                <button id="restart-btn" class="btn">Restart</button>
+            </div>
+        </section>
+
+        <!-- STAGE 3: LOVE LETTER -->
+        <section id="stage-3" class="stage hidden">
+            <div class="glass-card">
+                <div class="photo-frame">
+                    <img src="assets/image2.jpg" alt="Us" id="final-photo">
+                </div>
+                
+                <div class="letter-content">
+                    <p id="typewriter-text"></p>
+                </div>
+
+                <div class="location-box">
+                    <p>Meet me here:</p>
+                    <a href="https://maps.google.com" target="_blank" class="location-link" id="location-link">📍 Our Special Spot</a>
+                </div>
+
+                <button id="final-btn" class="btn pulse">Will You Be My Valentine?</button>
+            </div>
+            
+            <div id="final-message" class="hidden">
+                <h1>Forever Starts Now. 💖</h1>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="puzzle.js"></script>
+    <script src="game.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>
